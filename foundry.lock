@@ -1,0 +1,17 @@
+{
+  "lib/forge-std": {
+    "rev": "0768d9c08c085c79bb31d88683a78770764fec49"
+  },
+  "lib/pendle-core": {
+    "branch": {
+      "name": "main-public",
+      "rev": "ba53685767bc16e070136b9dbfe02a5dd6258c61"
+    }
+  },
+  "lib/pendle-sy": {
+    "branch": {
+      "name": "main",
+      "rev": "21ccfee6c24936fb73c1ae78d1a87c83b05f105c"
+    }
+  }
+}
