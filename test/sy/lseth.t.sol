@@ -17,7 +17,7 @@ contract PendleLsETHSYTest is SYTest {
             deployTransparentProxy(
                 address(new PendleLsETHSY()),
                 deployer,
-                abi.encodeWithSelector(PendleLsETHSY.initialize.selector, "SY Liquid Staked ETH", "SY-LsETH", deployer)
+                abi.encodeWithSelector(PendleLsETHSY.initialize.selector, deployer)
             )
         );
 

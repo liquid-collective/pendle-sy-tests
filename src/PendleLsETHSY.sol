@@ -9,8 +9,8 @@ contract PendleLsETHSY is PendleERC20SYUpgV2 {
 
     constructor() PendleERC20SYUpgV2(LSETH) {}
 
-    function initialize(string memory _name, string memory _symbol, address _owner) external override initializer {
-        __SYBaseUpgV2_init(_name, _symbol, _owner);
+    function initialize(address _owner) external initializer {
+        __SYBaseUpgV2_init("SY Liquid Staked ETH", "SY-LsETH", _owner);
     }
 
     /*///////////////////////////////////////////////////////////////
