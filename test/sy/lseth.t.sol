@@ -2,10 +2,10 @@
 pragma solidity ^0.8.28;
 
 import {SYTest} from "../common/SYTest.t.sol";
-import {PendleLsETHETHSY} from "../../src/PendleLsETHETHSY.sol";
+import {PendleLsETHSY} from "../../src/PendleLsETHSY.sol";
 import {IStandardizedYield} from "pendle-sy/interfaces/IStandardizedYield.sol";
 
-contract PendleLsETHETHSYTest is SYTest {
+contract PendleLsETHSYTest is SYTest {
     function setUpFork() internal override {
         vm.createSelectFork("ethereum");
     }
@@ -13,7 +13,13 @@ contract PendleLsETHETHSYTest is SYTest {
     function deploySY() internal override {
         vm.startPrank(deployer);
 
-        sy = IStandardizedYield(deployTransparentProxy(address(new PendleLsETHETHSY()), deployer, abi.encodeCall(PendleLsETHETHSY.initialize, ())));
+        sy = IStandardizedYield(
+            deployTransparentProxy(
+                address(new PendleLsETHSY()),
+                deployer,
+                abi.encodeWithSelector(PendleLsETHSY.initialize.selector, deployer)
+            )
+        );
 
         vm.stopPrank();
     }
